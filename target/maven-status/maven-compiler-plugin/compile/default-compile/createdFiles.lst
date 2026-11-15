@@ -1,0 +1,7 @@
+cat\jorge\app\MainApp.class
+cat\jorge\model\CentralSoldadura.class
+cat\jorge\tasks\RobotTask.class
+cat\jorge\tasks\AGVTask.class
+cat\jorge\model\CintaTransportadora.class
+cat\jorge\view\DashboardTask.class
+cat\jorge\model\SupervisorCentral.class
