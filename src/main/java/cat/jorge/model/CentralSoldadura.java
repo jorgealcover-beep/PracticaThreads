@@ -31,6 +31,7 @@ public class CentralSoldadura {
                 if (!estacions[i]){
                     estacions[i] = true;
                     num = i;
+                    IO.println("El robot " + id +" ha ocupat l'estacio " + (i+1));
                     break;
                 }
             }
@@ -40,7 +41,9 @@ public class CentralSoldadura {
     
     public void allibera(int id, int num){
         synchronized (this){
+            IO.println("El robot " + id +" ha alliberat l'estacio " + (num+1));
             estacions[num] = false;
+            
         }
         sem.release();
     }
@@ -48,6 +51,7 @@ public class CentralSoldadura {
     public void registreCentral(int id) throws InterruptedException{
         mutex.acquire();
         try{
+            IO.println("El robot " + id +" esta firmant");
             Thread.sleep(200);
         }finally{
             mutex.release();
