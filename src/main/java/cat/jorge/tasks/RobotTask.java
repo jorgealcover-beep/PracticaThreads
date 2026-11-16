@@ -4,18 +4,21 @@
  */
 package cat.jorge.tasks;
 
-import cat.jorge.model.*;
 import java.util.Random;
+
+import cat.jorge.model.CentralSoldadura;
+import cat.jorge.model.CintaTransportadora;
+import cat.jorge.model.SupervisorCentral;
 
 /**
  *
  * @author Usuario
  */
 public class RobotTask implements Runnable {
-    private int id;
-    private CintaTransportadora cinta;
-    private SupervisorCentral supervisor;
-    private CentralSoldadura central;
+    private final int id;
+    private final CintaTransportadora cinta;
+    private final SupervisorCentral supervisor;
+    private final CentralSoldadura central;
     Random rand = new Random();
     
 
