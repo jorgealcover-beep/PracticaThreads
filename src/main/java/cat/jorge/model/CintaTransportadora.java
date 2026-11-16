@@ -32,10 +32,12 @@ public class CintaTransportadora {
                 cintaNoPlena.await();
             }
             bateries.add("Bat-" +comptadorBat);
+            IO.println("AGV " + id + " ha afegit " + bateries.getLast());
             cintaNoBuida.signal();
         }finally{
             lock.unlock();
         }
+        
     }
     
     public String extreuBateria(int id) throws InterruptedException{
@@ -44,6 +46,7 @@ public class CintaTransportadora {
             while(bateries.isEmpty()){
                 cintaNoBuida.await();
             }
+            IO.println("El robot " + id + " ha extret " + bateries.getFirst());
             String bat = bateries.remove(0);
             cintaNoPlena.signal();
             return bat;
